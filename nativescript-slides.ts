@@ -332,6 +332,18 @@ export class SlideContainer extends AbsoluteLayout {
 			return;
 		}
 
+		if(typeof noOfSlides === "number") {
+			console.log("slideNoOfSlides defined: " + noOfSlides);
+			if(noOfSlides === 0)
+				return; // Zero means that no slides should be slided
+
+			noOfSlides--; // Removing one, since one is slided after this
+			for (var index = 0; index < noOfSlides; index++) {
+				console.log("index: " + index);
+				this.currentPanel = this.currentPanel.right;
+			}
+		}
+
 		this.direction = direction.left;
 		this.transitioning = true;
 		this.triggerStartEvent();
