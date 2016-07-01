@@ -326,7 +326,7 @@ export class SlideContainer extends AbsoluteLayout {
 		}
 	}
 
-	public nextSlide(): void {
+	public nextSlide(noOfSlides): void {
 		if (!this.hasNext){
 			this.triggerCancelEvent(cancellationReason.noMoreSlides);
 			return;
